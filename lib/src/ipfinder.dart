@@ -84,7 +84,7 @@ class Ipfinder {
     var body = json.encode({"token": "${this.token}", "format": "${format}"});
 
     final response =
-        await http.post(defaultBaseUrl, headers: headers, body: body);
+        await http.post(Uri.parse(defaultBaseUrl), headers: headers, body: body);
     if (response.statusCode != 200){
       throw IPfinderException('post error: statusCode= ${response.statusCode}');
     }
